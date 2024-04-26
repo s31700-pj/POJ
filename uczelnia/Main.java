@@ -27,6 +27,21 @@ Jeżeli jednak, tak jak w naszym przypadku są to mało istotne funkcje "urozmai
 do samej "uczelni" nie wnoszą nic wartościowego, to moim zdaniem użycie enuma dalej by wystarczyło
 */
 
+/*
+Różnica między @NonNull i @NonBlank jest taka, że @NonNull sprawdza czy zmienna nie jest równa
+null. @NonBlank natomiast sprawdza czy zmienna nie jest równa null i czy nie składa się tylko z
+białych znaków. W swoim programie walidacji stringów powinienem użyć @NonBlank, jednak miałem
+problem z importowaniem paczki więc zostanę przy @NonNull (koniec końców różnicę rozumiem)
+Obsługa wyjątków będzie na dole programu w klaise main. Dodałem tylko jeden wyjątek, ponieważ w
+tym programie na tym etapie nie ma za bardzo "pola do popisu". Odpowiedź na pytanie:
+Są dwa rodzaje wyjątków - checked i unchecked exceptions.
+Checked exceptions to wyjątki które są sprawdzane przez Jave podczas uruchamiania programu.
+Zostajemy o nich informowani już w momencie pisania kodu.
+Unchecked exceptions to wyjątki o których dowiadujemy się dopiero podczas uruchomienia programu,
+ponieważ problem wystąpił nie w momencie pisania kodu, ale w momencie kiedy był już uruchomiony
+(np. użytkowik podał stringa tam gdzie powinien być int).
+*/
+
 package org.example;
 
 public class Main {
@@ -42,16 +57,21 @@ public class Main {
         Uczeń uczeń4 = new Uczeń("Piotr","Piotrowski",11111);
         Uczeń uczeń5 = new Uczeń("Jakub","Jakubowicz",22222);
 
+        try {
 
-        grupa1.dodajPrzedmiot(informatyka);
-        grupa2.dodajPrzedmiot(informatyka);
+            grupa1.dodajPrzedmiot(informatyka);
+            grupa2.dodajPrzedmiot(informatyka);
 
-        grupa1.dodajUcznia(uczeń1);
-        grupa1.dodajUcznia(uczeń3);
-        grupa1.dodajUcznia(uczeń5);
-        grupa2.dodajUcznia(uczeń2);
-        grupa2.dodajUcznia(uczeń4);
-        grupa2.dodajUcznia(uczeń5);
+            grupa1.dodajUcznia(uczeń1);
+            grupa1.dodajUcznia(uczeń3);
+            grupa1.dodajUcznia(uczeń5);
+            grupa2.dodajUcznia(uczeń2);
+            grupa2.dodajUcznia(uczeń4);
+            grupa2.dodajUcznia(uczeń5);
 
+        } catch (Exception e) {
+            System.out.println("Wystąpił błąd: " + e.getMessage());
+        }
     }
+
 }

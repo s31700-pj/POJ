@@ -4,6 +4,11 @@ import lombok.*;
 @Getter
 @AllArgsConstructor
 public class Przedmiot {
+
     private String nazwa;
     private Sala sala;
+
+    public Przedmiot (@NonNull String nazwa){
+
+    }
 }

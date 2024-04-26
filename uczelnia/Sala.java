@@ -10,7 +10,7 @@ public class Sala {
     private boolean prądWłączony;
     private boolean czysta;
 
-    public Sala(int nr, TypSali typ) {
+    public Sala(@NonNull int nr, @NonNull TypSali typ) {
 
     }
 
