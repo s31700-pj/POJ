@@ -1,0 +1,17 @@
+Rodzaj napoju: Kawa
+Rozmiar: S
+Dodatki: [cukier, mleko]
+Cena: 15.0
+*******************************************
+Rodzaj napoju: Herbata
+Rozmiar: S
+Dodatki: [cytryna]
+Zastosowany kod zniżkowy: HELLO
+Cena: 8.0 zł.
+*******************************************
+Rodzaj napoju: Herbata
+Rozmiar: M
+Dodatki: []
+Zastosowany kod zniżkowy: FAMILY
+Cena: 5.0 zł.
+*******************************************
